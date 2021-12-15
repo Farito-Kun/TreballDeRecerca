@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "proyectosensoresraspberry": {
+      "hosting": {
+        "appRasp": [
+          "proyectosensoresraspberry"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "proyectosensoresraspberry"
+  }
+}
