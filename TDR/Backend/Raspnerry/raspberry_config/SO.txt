@@ -1,5 +1,0 @@
-SO
-https://www.raspberrypi.org/software/operating-systems/
-
-SO --> Msd
-https://www.balena.io/etcher/

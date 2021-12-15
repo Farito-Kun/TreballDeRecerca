@@ -1,0 +1,61 @@
+
+
+<mat-toolbar>
+    <button (click)="drawer.toggle()" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>Sensores</span> 
+</mat-toolbar>
+  
+
+<mat-drawer-container class="example-container">
+    <mat-drawer #drawer modal="side" opened>  
+        <mat-list role="list">
+
+            <mat-list-item role="listitem" routerLink="addData">
+                Añadir formulario
+            </mat-list-item>
+
+            <mat-list-item role="listitem" routerLink="graficas">
+                <mat-icon aria-hidden="false" aria-label="Example home icon">graphic_eq</mat-icon>
+                Gráficas
+            </mat-list-item>
+
+            
+            <mat-list-item role="listitem" routerLink="logs">
+                <mat-icon aria-hidden="false" aria-label="Example home icon">error_outline</mat-icon>
+                Logs
+            </mat-list-item>
+
+            <mat-list-item role="listitem" routerLink="perfil">
+                <mat-icon aria-hidden="false" aria-label="Example home icon">perm_identity</mat-icon>
+                Perfil
+            </mat-list-item>
+
+            <mat-list-item role="listitem" routerLink="emails">
+                <mat-icon aria-hidden="false" aria-label="Example home icon">email</mat-icon>
+                Correos
+            </mat-list-item>
+
+            <mat-list-item role="listitem" (click)="sesion()">
+                <mat-icon aria-hidden="false" aria-label="Example home icon">input</mat-icon>
+                Cerrar sesión
+            </mat-list-item>
+
+        </mat-list>
+    </mat-drawer>
+
+    <mat-drawer-content>
+        <mat-card>
+            <mat-card-content>
+               <router-outlet>
+
+                <!--<br><br><br><br><br><br><br><br><br><br>-->
+                
+               </router-outlet> 
+            </mat-card-content>
+          </mat-card>
+          
+    </mat-drawer-content>
+    
+</mat-drawer-container>

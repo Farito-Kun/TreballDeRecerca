@@ -1,0 +1,60 @@
+
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
+
+<div class="container" id="container">
+    <div class="form-container sign-up-container">
+        <form [formGroup]="registerForm" (ngSubmit)="registrarse()">
+            <h1>Crear una cuenta </h1>
+            <div class="social-container">
+                <a class="social" (click)="login_facebook()"><i class="fab fa-facebook-f"></i></a>
+                <a class="social" (click)="login_gmail()"><i class="fab fa-google-plus-g"></i></a>
+            </div>
+            <span>o use su correo electrónico para registrarse </span>
+
+            <div class="form-group">
+                <input formControlName="user_reg" placeholder="Email" type="email" >
+            </div>
+            <br>
+            <div class="form-group">
+                <input formControlName="pass_reg" placeholder="Password" type="password"/>
+            </div>
+            
+            <button>Registrarse</button>
+        </form>
+    </div>
+
+    <div class="form-container sign-in-container">
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
+            <h1>Iniciar sesión </h1>
+            <div class="social-container">
+                <a class="social" (click)="login_facebook()"><i class="fab fa-facebook-f"></i></a>
+                <a class="social" (click)="login_gmail()"><i class="fab fa-google-plus-g"></i></a>
+            </div>
+            <span>o usa tu cuenta </span>
+            <div class="form-group">
+                <input formControlName="user" placeholder="Email" type="email" >
+            </div>
+            <br>
+            <div class="form-group">
+                <input formControlName="pass" placeholder="Password" type="password"/>
+            </div>
+            <button >iniciar sesión </button>
+        </form>
+    </div>
+
+    <div class="overlay-container">
+        <div class="overlay">
+            <div class="overlay-panel overlay-left">
+                <h1>¡Bienvenido de nuevo! </h1>
+                <p>Para mantenerse conectado con nosotros, inicie sesión con su información personal </p>
+                <button class="ghost" id="signIn">Iniciar sesión</button>
+            </div>
+            <div class="overlay-panel overlay-right">
+                <h1>Hola!</h1>
+                <p>Ingrese sus datos personales y comience su viaje con nosotros </p>
+                <button class="ghost" id="signUp">Registrarse</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,67 @@
+<mat-accordion class="example-headers-align">
+    <mat-expansion-panel  hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Correo nuevo
+        </mat-panel-title>
+        <mat-panel-description>
+          Añadir correo
+          <mat-icon>email</mat-icon>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <form [formGroup]="basicForm">
+        <mat-form-field >
+          <mat-label>Correo</mat-label>
+          <input matInput name="email" formControlName="email">
+        </mat-form-field>
+        <small *ngIf="basicForm.controls['email'].hasError('required') && basicForm.controls['email'].touched" 
+        class="form-error-msg"> Correo obligatorio </small>
+        <button mat-raised-button (click)="addEmail()" [disabled]="basicForm.invalid"><mat-icon>add</mat-icon>Añadir</button>
+      </form>
+
+    </mat-expansion-panel>
+  </mat-accordion>
+
+  
+
+
+
+<mat-form-field appearance="standard">
+    <mat-label>Filtrar</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. nombre" #input autocomplete="off">
+  </mat-form-field>
+  
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <ng-container matColumnDef="id_user">
+      <th mat-header-cell *matHeaderCellDef> Id Usuario </th>
+      <td mat-cell *matCellDef="let element"> {{element.id_user}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef> Correo </th>
+      <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef>Estado</th>
+        <td mat-cell *matCellDef="let element;" style="margin-top: 5px;"> 
+            
+            <div *ngIf="element.status == 'true'">
+              <a class="pointer" style="color: #18b020;" (click)="disponible(element)" matTooltip="Disponoble"><mat-icon>remove_red_eye</mat-icon></a>
+            </div>
+
+            <div *ngIf="element.status == 'false'">
+              <a class="pointer" style="color: black" (click)="noDisponible(element)" matTooltip="No Disponible"><mat-icon>clear</mat-icon></a>
+            </div>
+
+            <a class="pointer" style="color: #e02e09;" (click)="deleteEmail(element)" matTooltip="Eliminar" ><mat-icon>delete</mat-icon></a>
+        </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+  
+<!--Pagination-->
+<mat-paginator [pageSizeOptions]="[5, 10, 20,50,100]" showFirstLastButtons></mat-paginator>

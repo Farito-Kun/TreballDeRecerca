@@ -1,0 +1,11 @@
+.nav-container  {
+    display: grid;
+    grid-template-columns: 90% 10%;
+    width: 100;
+}
+
+/*Tamaño de la ventana*/
+mat-drawer-content {
+    height: 90vh;
+    padding: 1rem;
+}

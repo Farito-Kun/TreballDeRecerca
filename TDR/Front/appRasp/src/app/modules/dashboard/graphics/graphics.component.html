@@ -1,0 +1,78 @@
+<!--<div class=" container">
+    <h1>Survey Reports</h1>
+    <div>
+      <h3> Vertical Bar Chart</h3>
+      <ngx-charts-bar-vertical
+        [gradient]="true"
+        [legendTitle]="'Vehical Survey'"
+        [legend]="true"
+        [results]="surveyData"
+        [showXAxisLabel]="true"
+        [showYAxisLabel]="true"
+        [view]="[1000,400]"
+        [xAxisLabel]="'Count'"
+        [xAxis]="true"
+        [yAxisLabel]="'Type of Vehicle'"
+        [yAxis]="true">
+      </ngx-charts-bar-vertical>
+    </div>
+
+    <div>
+      <h3>Pie Chart</h3>
+      <ngx-charts-pie-chart
+        [labels]="true"
+        [legendTitle]="'Vehicle Survey'"
+        [legend]="true"
+        [results]="surveyData"
+        [view]="[1000,300]">
+      </ngx-charts-pie-chart>
+    </div>
+  
+    <div>
+      <h3>Advance Pie Chart</h3>
+      <ngx-charts-advanced-pie-chart
+        [gradient]="true"
+        [results]="surveyData">
+      </ngx-charts-advanced-pie-chart>
+    </div>
+
+    <h3>Line Chart</h3>
+    <ngx-charts-line-chart
+        [view]="[1000,400]"
+        [legend]="legend"
+        [showXAxisLabel]="showXAxisLabel"
+        [showYAxisLabel]="showYAxisLabel"
+        [xAxis]="xAxis"
+        [yAxis]="yAxis"
+        [xAxisLabel]="xAxisLabel"
+        [yAxisLabel]="yAxisLabel"
+        [timeline]="timeline"
+        [results]="multi"
+        (select)="onSelect($event)"
+        (activate)="onActivate($event)"
+        (deactivate)="onDeactivate($event)"
+        >
+    </ngx-charts-line-chart>
+  </div>
+
+-->
+
+
+<div class="wrapper">
+
+  <ngx-charts-line-chart 
+  
+    [legend]="legend" 
+    [showXAxisLabel]="showXAxisLabel"
+    [showYAxisLabel]="showYAxisLabel" 
+    [xAxis]="true" 
+    [yAxis]="true" 
+    [autoScale]="true" 
+    [xAxisLabel]="xAxisLabel"
+    [yAxisLabel]="yAxisLabel" 
+    [results]="multi" 
+    style="fill: #d1d1d1;" [timeline]="true">
+  </ngx-charts-line-chart>
+
+
+</div>
